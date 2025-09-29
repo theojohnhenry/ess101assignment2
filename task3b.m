@@ -13,7 +13,7 @@ xlin = unifrnd(0,50,[N, 1])
 xsquaredlin = xlin.^2
 elin = normrnd(0,12.8, [N,1])
 
-ylin = anoll + bnoll*xlin+elin% + cnoll*xsquaredlin
+ylin = anoll + bnoll*xlin+elin + cnoll*xsquaredlin
 
 scatter(xlin,ylin)
 hold on 
@@ -22,6 +22,6 @@ bigphi = [ones(N,1), xlin, xsquaredlin]
 thetahat = inv(bigphi'*bigphi)*bigphi'*ylin
 
 xplutt = linspace(1, 50, N); 
-yplutt = thetahat(1) + thetahat(2)*xplutt% + thetahat(3)*xplutt.^2;        
+yplutt = thetahat(1) + thetahat(2)*xplutt + thetahat(3)*xplutt.^2;        
 
 plot(xplutt,yplutt,'r','LineWidth',1)
