@@ -10,19 +10,18 @@ cnoll = 2.8;
 
 ilin = linspace(1,N,N)
 xlin = unifrnd(0,50,[N, 1])
-xsquaredlin = xlin.^2
-elin = normrnd(0,12.8^2, [N,1])
+elin = normrnd(0,3.8^2, [N,1])
 
-ylin = anoll + bnoll*xlin+elin + cnoll*xsquaredlin
+ylin = anoll + bnoll*xlin+elin;
 
 scatter(xlin,ylin)
 hold on 
 
-bigphi = [ones(N,1), xlin, xsquaredlin]
+bigphi = [ones(N,1), xlin];
 thetahat = inv(bigphi'*bigphi)*bigphi'*ylin
 
 xplutt = linspace(1, 50, N); 
-yplutt = thetahat(1) + thetahat(2)*xplutt + thetahat(3)*xplutt.^2;        
+yplutt = thetahat(1) + thetahat(2)*xplutt;     
 
 plot(xplutt,yplutt,'r','LineWidth',1)
 

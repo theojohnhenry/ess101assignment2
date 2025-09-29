@@ -18,13 +18,13 @@ ylin = anoll + bnoll*xlin+elin + cnoll*xsquaredlin
 scatter(xlin,ylin)
 hold on 
 
-bigphi = [ones(N,1), xlin, xsquaredlin]
+bigphi = [ones(N,1), xlin]
 thetahat = inv(bigphi'*bigphi)*bigphi'*ylin
 
 xplutt = linspace(1, 50, N); 
-yplutt = thetahat(1) + thetahat(2)*xplutt + thetahat(3)*xplutt.^2;        
+yplutt = thetahat(1) + thetahat(2)*xplutt;        
+yhat = bigphi * thetahat;
 
 plot(xplutt,yplutt,'r','LineWidth',1)
 
-yhat = bigphi * thetahat;
 epsilon = mean((ylin - yhat).^2)
