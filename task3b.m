@@ -11,7 +11,7 @@ cnoll = 2.8;
 ilin = linspace(1,N,N)
 xlin = unifrnd(0,50,[N, 1])
 xsquaredlin = xlin.^2
-elin = normrnd(0,12.8^2, [N,1])
+elin = normrnd(0,12.8, [N,1])
 
 ylin = anoll + bnoll*xlin+elin + cnoll*xsquaredlin
 

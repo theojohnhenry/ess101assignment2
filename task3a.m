@@ -6,11 +6,10 @@ syms x real
 N = 100;
 anoll = -2.923;
 bnoll = 7.18; 
-cnoll = 2.8;
 
 ilin = linspace(1,N,N)
 xlin = unifrnd(0,50,[N, 1])
-elin = normrnd(0,3.8^2, [N,1])
+elin = normrnd(0,3.8, [N,1])
 
 ylin = anoll + bnoll*xlin+elin;
 
